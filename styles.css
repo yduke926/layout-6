@@ -1,7 +1,20 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   display: grid;
   grid-template-rows: 8vh 1fr 8vh;
-  padding: 1rem 5rem;
+  padding: 1rem;
 }
 
 .header {
@@ -12,11 +25,15 @@ body {
   background-color: rgba(218, 188, 113, 0.966);
 }
 
+.logo {
+  padding: 0 3rem;
+}
+
 .links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 li {
@@ -25,32 +42,50 @@ li {
 
 .btn {
   align-self: stretch;
+  background-color: beige;
+  border: none;
+  padding: 1rem 3rem;
 }
+
 .main-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, minmax(15rem, 1fr));
+  grid-column: repeat(4, 1fr);
   gap: 0px;
 }
 
-.main-content > div {
+.hero {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  height: 50vh;
+  background-color: yellowgreen;
+  border: 0.5px solid #dfdfdf;
+
   display: grid;
   align-items: center;
   justify-content: center;
 }
-.hero {
-  grid-column: 1 / span 3;
-  grid-row: 1 / span 2;
-  background-color: yellowgreen;
-  border: 0.5px solid #dfdfdf;
-}
 
 .map {
-  grid-column: 4 / span -1;
+  grid-column: 4 / span 1;
   grid-row: 1 / span 2;
   background-color: blueviolet;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
+.boxes {
+  grid-column: 1 / 5;
+  display: grid;
+  gap: 0px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, minmax(15rem, 1fr));
+}
+.boxes > div {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
 .box {
   border: 0.5px solid #dfdfdf;
 }
@@ -96,4 +131,26 @@ li {
   background-color: rgb(230, 141, 109);
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    height: 30vh;
+  }
+  .map {
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+    height: 20vh;
+  }
+
+  .boxes {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .box {
+    height: 20vh;
+  }
 }
