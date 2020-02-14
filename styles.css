@@ -1,0 +1,99 @@
+body {
+  display: grid;
+  grid-template-rows: 8vh 1fr 8vh;
+  padding: 1rem 5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: rgba(218, 188, 113, 0.966);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+.btn {
+  align-self: stretch;
+}
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, minmax(15rem, 1fr));
+  gap: 0px;
+}
+
+.main-content > div {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.hero {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  background-color: yellowgreen;
+  border: 0.5px solid #dfdfdf;
+}
+
+.map {
+  grid-column: 4 / span -1;
+  grid-row: 1 / span 2;
+  background-color: blueviolet;
+}
+
+.box {
+  border: 0.5px solid #dfdfdf;
+}
+.box-1 {
+  background-color: cadetblue;
+}
+.box-2 {
+  background-color: rgb(109, 181, 184);
+}
+.box-3 {
+  background-color: rgb(86, 128, 129);
+}
+.box-4 {
+  background-color: rgb(116, 189, 192);
+}
+.box-5 {
+  background-color: rgb(69, 114, 116);
+}
+.box-6 {
+  background-color: rgba(18, 163, 168, 0.692);
+}
+.box-7 {
+  background-color: rgb(148, 232, 235);
+}
+.box-8 {
+  background-color: rgba(57, 140, 143, 0.795);
+}
+.box-9 {
+  background-color: rgb(142, 204, 206);
+}
+.box-10 {
+  background-color: rgb(27, 114, 117);
+}
+.box-11 {
+  background-color: rgb(41, 164, 168);
+}
+.box-12 {
+  background-color: rgb(94, 210, 214);
+}
+
+.footer {
+  display: flex;
+  background-color: rgb(230, 141, 109);
+  justify-content: center;
+  align-items: center;
+}
